@@ -1,0 +1,209 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100vh; /* Make the body take full viewport height */
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: transparent;
+    padding: 15px 0;
+    position: relative;
+    width: 100%; /* Full width */
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    padding-right: 20px; /* Add padding to the right for spacing */
+}
+
+.navbar li {
+    margin: 0 20px; /* Space between items */
+}
+
+.navbar li a {
+    text-decoration: none; /* Remove link underline */
+    color: darkgreen;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+}
+
+.navbar li a:hover {
+    background-color: #c5e1a5;
+    border-radius: 4px;
+}
+
+/* Background Image */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/213/504/original/road-map-illustration-vector.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    color: darkgreen;
+    margin-top: 70px; /* Adjusted margin for better positioning */
+    font-size: 3.75em;
+}
+
+/* Goal Container */
+.goal-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between each circle */
+    margin-top: 50px; /* Space between heading and first row of circles */
+    padding: 0 20px; /* Add padding for responsiveness */
+    padding-bottom: 100px; /* Additional padding to allow space for the last items */
+}
+
+.goal {
+    
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 150px; /* Circle diameter */
+    height: 150px; /* Circle diameter */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 calc(25% - 30px); /* 4 items in a row */
+    box-sizing: border-box; /* To include padding and border in the width */
+}
+.goal:nth-child(1) {
+    background-color: #ffccbc; /* No Poverty */
+}
+
+.goal:nth-child(2) {
+    background-color: #ffab91; /* Zero Hunger */
+}
+
+.goal:nth-child(3) {
+    background-color: #ffe082; /* Good Health */
+}
+
+.goal:nth-child(4) {
+    background-color: #c5e1a5; /* Quality Education */
+}
+
+.goal:nth-child(5) {
+    background-color: #81d4fa; /* Gender Equality */
+}
+
+.goal:nth-child(6) {
+    background-color: #b2dfdb; /* Clean Water */
+}
+
+.goal:nth-child(7) {
+    background-color: #ffcc80; /* Affordable Energy */
+}
+
+.goal:nth-child(8) {
+    background-color: #ff8a65; /* Decent Work */
+}
+
+.goal:nth-child(9) {
+    background-color: #90caf9; /* Industry, Innovation, and Infrastructure */
+}
+
+.goal:nth-child(10) {
+    background-color: #f48fb1; /* Reduced Inequality */
+}
+
+.goal:nth-child(11) {
+    background-color: #e1bee7; /* Sustainable Cities */
+}
+
+.goal:nth-child(12) {
+    background-color: #cfd8dc; /* Responsible Consumption */
+}
+
+.goal:nth-child(13) {
+    background-color: #c5e1a5; /* Climate Action */
+}
+
+.goal:nth-child(14) {
+    background-color: #b2ebf2; /* Life Below Water */
+}
+
+.goal:nth-child(15) {
+    background-color: #f0f4c3; /* Life on Land */
+}
+
+.goal:nth-child(16) {
+    background-color: #ffcc80; /* Peace and Justice */
+}
+
+.goal:nth-child(17) {
+    background-color: #90caf9; /* Partnerships for the Goals */
+}
+.goal:nth-child(18) {
+    background-color: #f48fb1; /* Partnerships for the Goals */
+}
+
+/* Zigzag Layout */
+.goal.zigzag {
+    margin-top: 50px; /* Add margin for zigzag effect */
+}
+
+.goal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.goal h2 {
+    font-size: 1.5em; /* Increased font size */
+    color: #009688;
+    margin: 0; /* Remove margin to center the text */
+    font-weight: bold; /* Make text bold */
+}
+
+.goal p {
+    font-size: 25px;
+    color: #333;
+    margin: 0; /* Remove margin to center the text */
+}
+
+.btn {
+    padding: 5px 10px;
+    /* background-color: #009688; */
+    /* color: white; */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove link underline */
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 0.8em;
+    margin-top: 10px; /* Move button 10px below the goal name */
+}
+
+.btn:hover {
+    background-color: #00796b;
+    transform: scale(1.05);
+}
+
+/* Colors for each goal */

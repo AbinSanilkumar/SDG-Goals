@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: transparent;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%; /* Full width */
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.navbar li {
+    margin: 0 20px; /* Space between items */
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar li a:hover {
+    background-color: #47a67a;
+    border-radius: 4px;
+}
+
+/* Background and Container */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/005/951/285/non_2x/earth-day-background-concept-free-vector.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.container {
+    text-align: center;
+    padding: 165px 20px; /* Added horizontal padding */
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 0; /* Adjusting for the nav bar */
+}
+
+h1 {
+    font-size: 4vw; /* Responsive font size */
+    margin-bottom: 20px;
+    color: #8fff91;
+    text-shadow: 5px 2px 0px #000;
+}
+
+h2 {
+    font-size: 3.5vw; /* Responsive font size */
+    margin-bottom: 20px;
+    color: #12ff1a;
+    text-shadow: 5px 2px 0px #000;
+}
+
+p {
+    font-size: 2vw; /* Responsive font size */
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #c6f5c6;
+    text-shadow: 3px 2px 0px #000;
+}
+
+.button {
+    background-color: #56b68b;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #294a29;
+    font-size: 20px;
+    font-weight: bolder;
+    display: inline-block; /* Ensures the button is inline */
+}
+
+.button:hover {
+    background-color: #47a67a;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Center items on smaller screens */
+    }
+
+    .navbar li {
+        margin: 0 10px; /* Reduced space between items */
+    }
+
+    .container {
+        padding: 100px 20px; /* Adjusted padding */
+    }
+
+    h1 {
+        font-size: 6vw; /* Responsive font size */
+    }
+
+    h2 {
+        font-size: 5vw; /* Responsive font size */
+    }
+
+    p {
+        font-size: 3vw; /* Responsive font size */
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 3vw; /* Responsive font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center; /* Center items */
+        padding: 10px 0; /* Adjusted padding */
+    }
+
+    .navbar li {
+        margin: 5px 0; /* Further reduced margin for mobile */
+        width: 100%; /* Full width for each item */
+        text-align: center; /* Center text */
+    }
+
+    .navbar li a {
+        width: 100%; /* Full width for clickable area */
+        padding: 10px; /* Adjusted padding */
+    }
+
+    .container {
+        padding: 50px 20px; /* Added horizontal padding */
+    }
+
+    h1 {
+        font-size: 8vw; /* Responsive font size */
+    }
+
+    h2 {
+        font-size: 6vw; /* Responsive font size */
+    }
+
+    p {
+        font-size: 4vw; /* Responsive font size */
+    }
+
+    .button {
+        padding: 8px 15px;
+        font-size: 4vw; /* Responsive font size */
+    }
+}

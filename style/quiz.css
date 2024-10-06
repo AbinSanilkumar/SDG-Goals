@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: transparent;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.navbar li a:hover {
+    background-color: #47a67a;
+    border-radius: 4px;
+}
+
+/* Background and Text Styles */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/005/951/285/non_2x/earth-day-background-concept-free-vector.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* Quiz Container Styles */
+.quiz-container {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 150px auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Feedback Styles */
+#feedback {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.correct {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.incorrect {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Quiz Button Styles */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Start Quiz Button Styles */
+.start-quiz-button {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #008CBA;
+}
+
+.start-quiz-button:hover {
+    background-color: #007B9E;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar li a {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .quiz-container {
+        margin-top: 100px;
+    }
+}

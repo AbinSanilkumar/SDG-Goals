@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Position for the overlay */
+}
+
+/* Background Image */
+body::before {
+    content: '';
+    background-image: url('https://img.freepik.com/premium-photo/sustainable-development-goals-sdg-background_1155162-1412.jpg');
+    background-size: cover; /* Cover the whole screen */
+    background-position: center; /* Center the image */
+    position: absolute; /* Position it absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.7; /* Adjusted opacity for more clarity */
+    z-index: -1; /* Place it behind the content */
+}
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+/* Button style for "Go to Main Menu" */
+.menu-button {
+    display: inline-block;  /* Make it behave like a block-level button */
+    background-color: #3498db;  /* Bright blue */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline from the link */
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.menu-button:hover {
+    background-color: #2980b9;  /* Darker blue on hover */
+    transform: scale(1.05);  /* Add a slight zoom effect on hover */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title and Headers */
+h1, h2 {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Game Question Box */
+#question-box {
+    background-color: #f1c40f; /* Bright yellow */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* Player Boxes */
+.game-players {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.player-box {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.player-box:hover {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+/* Choices - Buttons */
+.choices-row button,
+.choices-column button {
+    padding: 12px 18px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #3498db; /* Bright blue */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.choices-row button:hover,
+.choices-column button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Scores */
+.scores {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    background-color: #2ecc71; /* Green for success */
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer Display */
+#timer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    background-color: #ff6b6b; /* Bright red for timer */
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Start Game Button */
+button {
+    background-color: #27ae60; /* Green for buttons */
+    color: white;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #2ecc71; /* Lighter green on hover */
+}
+
+/* Hover effect for Play Again Button */
+button:focus {
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Style for Game Over page */
+#player1-final-score, #player2-final-score {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}

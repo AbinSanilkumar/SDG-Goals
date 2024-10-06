@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game: Single Player Mode</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic container styles */
+        .container {
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: flex-start; /* Aligns content to the left */
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Timer and question styles */
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .choices-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .choices-row button {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with "Go to Main Menu" -->
+    <div class="navbar">
+        <a href="/index.html">Go to Main Menu</a>
+    </div>
+
+    <div class="container">
+        <h1>Quiz Game: Single Player Mode</h1>
+        <div id="timer">Time: 10s</div>
+        <div id="question-box">
+            <p id="question">Loading question...</p>
+        </div>
+
+        <div id="choices" class="choices-row"></div>
+
+        <div class="scores" id="scores">
+            <p>Score: <span id="score">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timePerQuestion = 10;
+        let timerInterval;
+
+        const questions = [
+            {
+                question: "Which of the following is NOT one of the Sustainable Development Goals?",
+                options: ["No Poverty", "Quality Education", "Climate Action", "Global Warming Management"],
+                correct: 3
+            },
+            {
+                question: "What is the target year for achieving the Sustainable Development Goals?",
+                options: ["2020", "2025", "2030", "2040"],
+                correct: 2
+            },
+            {
+                question: "Which Sustainable Development Goal aims to ensure availability and sustainable management of water and sanitation for all?",
+                options: ["Goal 6", "Goal 5", "Goal 4", "Goal 7"],
+                correct: 0
+            }
+        ];
+
+        function loadQuestion(index) {
+            const questionData = questions[index];
+            document.getElementById("question").textContent = questionData.question;
+
+            const choicesContainer = document.getElementById("choices");
+            choicesContainer.innerHTML = ""; 
+
+            questionData.options.forEach((option, i) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.onclick = () => checkAnswer(i);
+                choicesContainer.appendChild(button);
+            });
+
+            resetTimer();
+        }
+
+        function checkAnswer(selectedIndex) {
+            const correctIndex = questions[currentQuestionIndex].correct;
+
+            if (selectedIndex === correctIndex) {
+                score += 3;
+            } else {
+                score -= 1;
+            }
+
+            updateScore();
+            goToNextQuestion();
+        }
+
+        function updateScore() {
+            document.getElementById("score").textContent = score;
+        }
+
+        function goToNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion(currentQuestionIndex);
+            } else {
+                endGame();
+            }
+        }
+
+        function endGame() {
+            clearInterval(timerInterval);
+            document.body.innerHTML = `<div class="container"><h1>Game Over!</h1><p>Your final score: ${score}</p><button onclick="location.reload()">Play Again</button></div>`;
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                if (timePerQuestion <= 0) {
+                    alert("Time's up!");
+                    goToNextQuestion();
+                    resetTimer();
+                } else {
+                    document.getElementById("timer").textContent = `Time: ${timePerQuestion}s`;
+                    timePerQuestion--;
+                }
+            }, 1000);
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timePerQuestion = 10;
+            startTimer();
+        }
+
+        // Load the first question when the page loads
+        loadQuestion(currentQuestionIndex);
+        startTimer();
+    </script>
+</body>
+</html>

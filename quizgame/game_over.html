@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/index.html" class="menu-button">Go to Main Menu</a>
+    </nav>
+
+    <div class="container">
+        <h1>Game Over!</h1>
+        <p>Your scores have been recorded.</p>
+        <p>Player 1 Score: <span id="player1-final-score"></span></p>
+        <p>Player 2 Score: <span id="player2-final-score"></span></p>
+        
+        <!-- Congratulation message -->
+        <h2 id="congratulation-message"></h2>
+        
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+
+    <script>
+        // Retrieve the final scores from local storage
+        const player1Score = parseInt(localStorage.getItem('player1Score') || 0, 10);
+        const player2Score = parseInt(localStorage.getItem('player2Score') || 0, 10);
+
+        // Display the final scores
+        document.getElementById('player1-final-score').textContent = player1Score;
+        document.getElementById('player2-final-score').textContent = player2Score;
+
+        // Determine the winner and display a congratulatory message
+        const congratulationMessage = document.getElementById('congratulation-message');
+        
+        if (player1Score > player2Score) {
+            congratulationMessage.textContent = "Congratulations Player 1! You are the winner!";
+        } else if (player2Score > player1Score) {
+            congratulationMessage.textContent = "Congratulations Player 2! You are the winner!";
+        } else {
+            congratulationMessage.textContent = "It's a tie! Well played both!";
+        }
+
+        // Function to restart the game
+        function restartGame() {
+            localStorage.removeItem('player1Score');
+            localStorage.removeItem('player2Score');
+            window.location.href = 'multiplayer.html'; // Redirect back to the multiplayer game page
+        }
+    </script>
+</body>
+</html>

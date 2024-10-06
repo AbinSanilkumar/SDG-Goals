@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: transparent;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%; /* Full width */
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.navbar li {
+    margin: 0 20px; /* Space between items */
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar li a:hover {
+    background-color: #47a67a;
+    border-radius: 4px;
+}
+
+/* Background and Text Styles */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/005/951/285/non_2x/earth-day-background-concept-free-vector.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/*Form Styles*/
+.form-container {
+    text-align: left; /* Align text to the left */
+    margin: 0 auto; /* Center the form */
+    max-width: 400px; /* Max width for the form */
+    background: rgba(0, 0, 0, 0.5); /* Background for the form */
+    padding: 20px; /* Padding for the form */
+    border-radius: 10px; /* Rounded corners for the form */
+    margin-top: 200px; /* Space from the top for the fixed navbar */
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Center items on smaller screens */
+    }
+
+    .navbar li {
+        margin: 0 10px; /* Reduced space between items */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center; /* Center items */
+        padding: 10px 0; /* Adjusted padding */
+    }
+
+    .navbar li {
+        margin: 5px 0; /* Further reduced margin for mobile */
+        width: 100%; /* Full width for each item */
+        text-align: center; /* Center text */
+    }
+
+    .navbar li a {
+        width: 100%; /* Full width for clickable area */
+        padding: 10px; /* Adjusted padding */
+    }
+
+    .form-container {
+        margin-top: 100px; /* Adjusted space from top */
+    }
+}
