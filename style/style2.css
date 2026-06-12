@@ -93,6 +93,9 @@ h1 {
     align-items: center;
     flex: 0 0 calc(25% - 30px); /* 4 items in a row */
     box-sizing: border-box; /* To include padding and border in the width */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 .goal:nth-child(1) {
     background-color: #ffccbc; /* No Poverty */
@@ -186,24 +189,6 @@ h1 {
     font-size: 25px;
     color: #333;
     margin: 0; /* Remove margin to center the text */
-}
-
-.btn {
-    padding: 5px 10px;
-    /* background-color: #009688; */
-    /* color: white; */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; /* Remove link underline */
-    transition: background-color 0.3s, transform 0.3s;
-    font-size: 0.8em;
-    margin-top: 10px; /* Move button 10px below the goal name */
-}
-
-.btn:hover {
-    background-color: #00796b;
-    transform: scale(1.05);
 }
 
 /* Colors for each goal */
